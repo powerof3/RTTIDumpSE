@@ -233,9 +233,9 @@ void dump_rtti()
 			}),
 		results.end());
 
-	/*constexpr std::array toRemove{
-		static_cast<std::uint64_t>(25921),   // float
-		static_cast<std::uint64_t>(950502),  // unsigned int
+	constexpr std::array toRemove{
+		static_cast<std::uint64_t>(0x01EFFB90),  // float
+		static_cast<std::uint64_t>(0x01EFFB78),  // unsigned int
 	};
 	results.erase(
 		std::remove_if(
@@ -244,7 +244,7 @@ void dump_rtti()
 			[&](auto&& a_elem) {
 				return std::find(toRemove.begin(), toRemove.end(), std::get<1>(a_elem)) != toRemove.end();
 			}),
-		results.end());*/
+		results.end());
 
 	std::ofstream file;
 	const auto openf = [&](std::string_view a_name) {
@@ -386,7 +386,7 @@ extern "C" DLLEXPORT SKSE::PluginVersionData SKSEPlugin_Version = {
 	.dataVersion = SKSE::PluginVersionData::kVersion,
 
 	.pluginVersion = 1,
-	.name = "RTTIDumper",
+	.name = "RTTIDumpSSE",
 
 	.author = "",
 	.supportEmail = "",
