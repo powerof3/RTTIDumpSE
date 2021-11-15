@@ -1,0 +1,13 @@
+{
+  "name": "rttidumpse",
+  "version-string": "1.0.0",
+  "description": "Dumps Skyrim RTTI offsets to headers",
+  "homepage": "",
+  "license": "MIT",
+  "dependencies": [
+    "boost-stl-interfaces",
+    "robin-hood-hashing",
+    "spdlog",
+    "srell"
+  ]
+}
