@@ -267,14 +267,12 @@ void dump_rtti()
 	openf("RTTI"sv);
 	for (const auto& [name, rid, vids] : results) {
 		(void)vids;
-		file << "\tinline constexpr REL::Offset RTTI_"sv << name << "{ "sv
-			 << "0x" << std::uppercase << std::hex << std::setw(8) << std::setfill('0') << rid << " };\n"sv;
+		file << "\tinline constexpr REL::Offset RTTI_"sv << name << "{ "sv << "0x" << std::uppercase << std::hex << std::setw(8) << std::setfill('0') << rid << " };\n"sv;
 	}
 	closef();
 
 	openf("VTABLE"sv);
-	const auto printVID = [&](std::uint64_t a_vid) { file << "REL::Offset("sv
-														  << "0x" << std::uppercase << std::hex << std::setw(8) << std::setfill('0') << a_vid << ")"sv; };
+	const auto printVID = [&](std::uint64_t a_vid) { file << "REL::Offset("sv << "0x" << std::uppercase << std::hex << std::setw(8) << std::setfill('0') << a_vid << ")"sv; };
 	for (const auto& [name, rid, vids] : results) {
 		(void)rid;
 		const std::span svids{ vids.data(), vids.size() };
